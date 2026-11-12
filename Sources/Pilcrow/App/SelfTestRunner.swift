@@ -13,6 +13,10 @@ enum SelfTestRunner {
         store.resetDemoData()
         try? await Task.sleep(nanoseconds: 100_000_000)
 
+        let realState = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first?
+            .appendingPathComponent("Pilcrow/state.json")
+        check(store.stateFileURL.path != realState?.path, "automation runs never touch the real state file")
+
         let startCoins = store.profile.coins
         let startSessions = store.sessions.count
         store.startSession()

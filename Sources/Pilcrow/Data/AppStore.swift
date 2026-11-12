@@ -1620,6 +1620,14 @@ final class AppStore: ObservableObject {
             return base
         }
 
+        // Never let an automated run read or write the real ledger.
+        if isAutomationProcess {
+            let base = FileManager.default.temporaryDirectory
+                .appendingPathComponent("pilcrow-automation-\(ProcessInfo.processInfo.processIdentifier)", isDirectory: true)
+            try? FileManager.default.createDirectory(at: base, withIntermediateDirectories: true)
+            return base
+        }
+
         let support = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first
             ?? FileManager.default.homeDirectoryForCurrentUser
         let base = support.appendingPathComponent("Pilcrow", isDirectory: true)
