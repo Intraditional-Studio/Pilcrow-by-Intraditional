@@ -1,0 +1,8 @@
+{
+  "name": "Pilcrow",
+  "tagline": "A local-first focus tracker for people who make things.",
+  "blurb": "Times a session, reads commits straight from your local .git — unpushed work included — and turns the result into coins, reports and a weekly receipt. Badges are earned, never bought. GitHub optional, no telemetry.",
+  "category": "Productivity",
+  "bundleID": "studio.intraditional.pilcrow",
+  "platforms": ["macos"]
+}
