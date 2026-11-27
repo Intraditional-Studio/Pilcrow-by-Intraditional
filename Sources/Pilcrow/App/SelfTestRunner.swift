@@ -29,13 +29,16 @@ enum SelfTestRunner {
         check(store.activeSession?.isRunning == true, "resume restarts the clock")
 
         try? await Task.sleep(nanoseconds: 1_300_000_000)
+        // Look the session up by id: demo data can hold a session later today,
+        // which would sort ahead of the one just ended.
+        let endedID = store.activeSession?.id
         store.endSession()
         try? await Task.sleep(nanoseconds: 900_000_000)
         check(store.sessions.count == startSessions + 1, "ending a session adds one completed session")
         check(store.activeSession == nil, "ended session is no longer active")
         check(store.reportSession != nil, "ending a session opens a report")
         check(store.profile.coins > startCoins, "a session earns coins")
-        let ended = store.completedSessions.first
+        let ended = store.completedSessions.first { $0.id == endedID }
         check(ended?.note == "", "short session is logged without invented events")
 
         store.reportSession = nil
