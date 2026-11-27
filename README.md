@@ -133,6 +133,6 @@ Pilcrow has no analytics, telemetry, advertising, or third-party servers. Focus 
 
 ## License
 
-Pilcrow is proprietary software © 2026 Intraditional Studio. See [LICENSE](LICENSE) for the terms. The bundled typefaces remain under the SIL Open Font License 1.1; see [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md).
+Pilcrow is open source under the [Apache License 2.0](LICENSE) © 2026 Intraditional Studio. The bundled typefaces remain under the SIL Open Font License 1.1; see [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md).
 
 Security reports: [SECURITY.md](SECURITY.md). Release process: [docs/RELEASE.md](docs/RELEASE.md).

@@ -51,5 +51,5 @@ the app bundle or in the repository.
 - Automatic updates are not included in 1.0; new versions are manual
   downloads with published checksums.
 
-Pilcrow is proprietary software © 2026 Intraditional Studio. Bundled
-typefaces are licensed under the SIL Open Font License 1.1.
+Pilcrow is open source under the Apache License 2.0 © 2026 Intraditional
+Studio. Bundled typefaces are licensed under the SIL Open Font License 1.1.
